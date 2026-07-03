@@ -1,5 +1,7 @@
 const cursor = document.querySelector('.cursor-trail');
-const navLinks = document.querySelectorAll('.topbar a');
+const hamburger = document.getElementById('hamburger');
+const navMenu = document.getElementById('navMenu');
+const navLinks = document.querySelectorAll('.nav-menu a');
 const loadingScreen = document.getElementById('loadingScreen');
 const chatWidget = document.getElementById('chatbotWidget');
 const chatToggle = document.querySelector('.chat-toggle');
@@ -116,13 +118,37 @@ function initScrollReveal() {
   pages.forEach(page => observer.observe(page));
 }
 
+function toggleHamburger() {
+  hamburger.classList.toggle('active');
+  navMenu.classList.toggle('active');
+  hamburger.setAttribute('aria-expanded', hamburger.classList.contains('active'));
+}
+
+function closeMenu() {
+  hamburger.classList.remove('active');
+  navMenu.classList.remove('active');
+  hamburger.setAttribute('aria-expanded', 'false');
+}
+
 function initNavigation() {
   navLinks.forEach(link => {
     link.addEventListener('click', event => {
       event.preventDefault();
+      closeMenu();
       const target = document.querySelector(link.getAttribute('href'));
       if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
+  });
+}
+
+function initHamburgerMenu() {
+  if (hamburger) {
+    hamburger.addEventListener('click', toggleHamburger);
+  }
+  document.addEventListener('click', event => {
+    if (hamburger && navMenu && !hamburger.contains(event.target) && !navMenu.contains(event.target)) {
+      closeMenu();
+    }
   });
 }
 
@@ -135,5 +161,6 @@ function initChatWidget() {
 initLoading();
 initCursor();
 initScrollReveal();
+initHamburgerMenu();
 initNavigation();
 initChatWidget();
