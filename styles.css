@@ -836,22 +836,94 @@ body.loading {
   mask-image: linear-gradient(180deg, transparent 0%, black 15%, black 85%, transparent 100%);
 }
 
-@media (max-width: 1120px) {
-  .section-hero, .split-grid, .contact-grid {
-    grid-template-columns: 1fr;
-  }
+/* Mobile-First Responsive Design */
+/* Extra Small: 320px - 480px */
+@media (max-width: 480px) {
+  .topbar { padding: 14px 16px; gap: 12px; flex-wrap: wrap; }
+  .brand { font-size: 0.95rem; letter-spacing: 0.15em; }
+  .topbar nav { width: 100%; gap: 8px; flex-wrap: wrap; order: 3; }
+  .topbar a { font-size: 0.8rem; padding: 8px 12px; background: rgba(66, 209, 185, 0.08); border-radius: 12px; border: 1px solid rgba(106, 218, 196, 0.12); }
+  .page { min-height: auto; padding: 60px 16px 40px; }
+  .section-hero { grid-template-columns: 1fr; gap: 24px; }
+  .section-hero h1 { font-size: 1.8rem; line-height: 1.1; }
+  .section-hero p, .page p { font-size: 0.95rem; line-height: 1.7; }
+  .section-content .eyebrow { font-size: 0.75rem; padding: 8px 12px; margin-bottom: 16px; }
+  .hero-actions { flex-direction: column; gap: 12px; margin-top: 20px; }
+  .btn { padding: 14px 20px; font-size: 0.95rem; border-radius: 12px; }
+  .media-card { width: 100%; aspect-ratio: 3 / 4; }
+  .image-tag { left: 12px; top: 12px; font-size: 0.8rem; padding: 8px 12px; }
+  .split-grid { grid-template-columns: 1fr; gap: 24px; }
   .reverse { direction: ltr; }
-  .page { padding: 100px 28px 60px; }
+  .section-number { font-size: 0.85rem; }
+  .page h2 { font-size: 1.6rem; margin-bottom: 16px; }
+  .section-copy ul { margin: 16px 0 0; padding-left: 16px; font-size: 0.9rem; }
+  .section-copy ul li { margin-bottom: 10px; }
+  .image-box { min-height: 240px; font-size: 1.4rem; }
+  .technology-grid { grid-template-columns: 1fr; gap: 16px; margin-top: 24px; }
+  .tech-card { padding: 20px; min-height: 140px; font-size: 0.9rem; }
+  .highlight-block { margin-top: 20px; padding: 20px; font-size: 0.95rem; }
+  .contact-grid { grid-template-columns: 1fr; gap: 24px; }
+  .contact-panel, .inquiry-panel { padding: 24px; }
+  .contact-panel h2, .inquiry-panel h3 { font-size: 1.4rem; margin-top: 4px; }
+  .contact-card { padding: 16px; gap: 12px; }
+  .contact-row { gap: 10px; font-size: 0.9rem; }
+  .contact-links { gap: 12px; margin-top: 12px; }
+  .social-link { width: 48px; height: 48px; padding: 8px; }
+  .inquiry-form { gap: 16px; }
+  .inquiry-form label { font-size: 0.85rem; gap: 8px; }
+  .inquiry-form input, .inquiry-form textarea { padding: 12px; font-size: 0.95rem; border-radius: 12px; }
+  .inquiry-form button { padding: 12px 18px; font-size: 0.95rem; }
+  .panel-header { margin-bottom: 16px; }
+  .panel-header h3 { font-size: 1.3rem; }
+  .panel-header p { font-size: 0.85rem; }
+  .footer-bar { padding: 16px 16px 24px; font-size: 0.85rem; }
+  .chatbot-widget { right: 12px; bottom: 12px; width: calc(100% - 24px); max-width: 300px; }
+  .chatbot-widget .chat-toggle { width: 100%; padding: 12px 16px; font-size: 0.9rem; }
+  .chat-panel { width: 100%; border-radius: 16px; }
+  .chat-header { padding: 14px 16px; }
+  .chat-header h4 { font-size: 0.95rem; }
+  .chat-header p { font-size: 0.8rem; }
+  .chat-body { max-height: 240px; min-height: 140px; padding: 12px 16px; gap: 10px; }
+  .message { padding: 12px 14px; font-size: 0.9rem; }
+  .chat-form { padding: 0 16px 14px; gap: 10px; }
+  .chat-form input, .chat-form button { padding: 12px 14px; font-size: 0.9rem; }
 }
 
-@media (max-width: 720px) {
-  .topbar { padding: 18px 20px; flex-wrap: wrap; }
-  .topbar nav { flex-wrap: wrap; gap: 14px; }
-  .section-hero h1 { font-size: 2.8rem; }
-  .page h2 { font-size: 2rem; }
-  .hero-actions { flex-direction: column; align-items: stretch; }
-  .page { padding: 80px 20px 50px; }
-  .section-content { width: 100%; }
+/* Small Devices: 481px - 768px */
+@media (min-width: 481px) and (max-width: 768px) {
+  .topbar { padding: 16px 24px; }
+  .topbar nav { gap: 16px; }
+  .topbar a { font-size: 0.9rem; }
+  .page { padding: 90px 24px 50px; }
+  .section-hero { grid-template-columns: 1fr; gap: 32px; }
+  .section-hero h1 { font-size: 2.4rem; }
+  .page h2 { font-size: 1.9rem; }
+  .hero-actions { flex-direction: column; gap: 14px; }
+  .btn { padding: 14px 24px; }
+  .media-card { width: 100%; aspect-ratio: 4 / 5; }
+  .split-grid { grid-template-columns: 1fr; gap: 32px; }
+  .reverse { direction: ltr; }
   .image-box { min-height: 320px; }
-  .technology-grid { grid-template-columns: 1fr; }
+  .technology-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+  .contact-grid { grid-template-columns: 1fr; gap: 28px; }
+  .contact-panel, .inquiry-panel { padding: 28px; }
+  .contact-panel h2, .inquiry-panel h3 { font-size: 1.8rem; }
+}
+
+/* Tablets: 769px - 1024px */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .page { padding: 100px 36px 60px; }
+  .section-hero { grid-template-columns: 1.2fr 1fr; gap: 40px; }
+  .split-grid { grid-template-columns: 1fr; gap: 40px; }
+  .section-hero h1, .page h2 { font-size: clamp(2.2rem, 4vw, 3rem); }
+  .technology-grid { grid-template-columns: repeat(2, 1fr); }
+  .contact-grid { grid-template-columns: 1.1fr 1fr; gap: 32px; }
+}
+
+/* Large Devices: 1025px+ */
+@media (min-width: 1025px) {
+  .section-hero { grid-template-columns: 1.3fr 1fr; }
+  .split-grid { grid-template-columns: 1fr 1fr; }
+  .technology-grid { grid-template-columns: repeat(3, 1fr); }
+  .contact-grid { grid-template-columns: 1.1fr 0.9fr; }
 }
